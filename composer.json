@@ -1,0 +1,61 @@
+{
+    "name": "nexper/contao-grid-bundle",
+    "type": "contao-bundle",
+    "description": "Contao bundle to create grid layouts",
+    "keywords": ["contao", "grid", "bootstrap", "columns"],
+    "homepage": "https://nexper.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nexper",
+            "homepage": "https://nexper.de"
+        },
+        {
+            "name": "André Heeke",
+            "homepage": "https://github.com/andreheeke"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "contao/core-bundle": "^4.8"
+    },
+    "conflict": {
+        "contao/core": "*",
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.3.1",
+        "php-http/guzzle6-adapter": "^1.1",
+        "phpunit/phpunit": "^8.5",
+        "symfony/phpunit-bridge": "^4.3"
+    },
+    "extra": {
+        "contao-manager-plugin": "Nexper\\ContaoGridBundle\\ContaoManager\\Plugin",
+        "symfony": {
+            "require": "^4.3"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Nexper\\ContaoGridBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nexper\\ContaoGridBundle\\Tests\\": "tests/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/andreheeke/contao-grid-bundle/issues",
+        "source": "https://github.com/andreheeke/contao-grid-bundle"
+    }
+}
