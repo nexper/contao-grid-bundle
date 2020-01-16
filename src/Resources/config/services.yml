@@ -1,5 +1,5 @@
 services:
     _instanceof:
-        Nexper\CoreBundle\Framework\FrameworkAwareInterface:
+        Contao\CoreBundle\Framework\FrameworkAwareInterface:
             calls:
                 - ["setFramework", ["@contao.framework"]]
