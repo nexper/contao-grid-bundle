@@ -1,5 +1,13 @@
 services:
+    _defaults:
+        autoconfigure: true
+        public: false
+
     _instanceof:
         Contao\CoreBundle\Framework\FrameworkAwareInterface:
             calls:
                 - ["setFramework", ["@contao.framework"]]
+
+    # Content elements
+    Nexper\ContaoGridBundle\Controller\ContentElement\ColumnStartContentElementController: ~
+    Nexper\ContaoGridBundle\Controller\ContentElement\ColumnStopContentElementController: ~

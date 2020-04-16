@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of nexper/contao-grid-bundle.
  *
- * (c) 2020 Nexper
+ * (c) 2020 Nexper <https://nexper.de>
  *
  * @author André Heeke <https://github.com/andreheeke>
  */
