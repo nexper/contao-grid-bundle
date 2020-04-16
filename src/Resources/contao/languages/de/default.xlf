@@ -1,0 +1,21 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/de/default.php" source-language="de">
+    <body>
+      <trans-unit id="CTE.nx_grid">
+        <source>Grid-Elemente</source>
+      </trans-unit>
+      <trans-unit id="CTE.nx_column_start.0">
+        <source>Spalte Anfang</source>
+      </trans-unit>
+      <trans-unit id="CTE.nx_column_start.1">
+        <source>Test</source>
+      </trans-unit>
+      <trans-unit id="CTE.nx_column_stop.0">
+        <source>Spalte Ende</source>
+      </trans-unit>
+      <trans-unit id="CTE.nx_column_stop.1">
+        <source>Test</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
