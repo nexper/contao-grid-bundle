@@ -4,8 +4,35 @@
       <trans-unit id="tl_content.nx_column_legend">
         <source>Spalten-Einstellungen</source>
       </trans-unit>
-      <trans-unit id="tl_content.nx_grid_column.0">
-        <source>Spalte</source>
+      <trans-unit id="tl_content.nx_grid_breakpoint_xs.0">
+        <source>Smartphone (Hochformat)</source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_xs.1">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_sm.0">
+        <source>Smartphone (Querformat)</source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_sm.1">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_md.0">
+        <source>Tablet (Hochformat)</source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_md.1">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_lg.0">
+        <source>Tablet (Querformat)</source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_lg.1">
+        <source></source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_xl.0">
+        <source>Desktop</source>
+      </trans-unit>
+      <trans-unit id="tl_content.nx_grid_breakpoint_xl.1">
+        <source></source>
       </trans-unit>
     </body>
   </file>

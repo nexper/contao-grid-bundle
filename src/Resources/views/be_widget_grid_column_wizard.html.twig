@@ -1,24 +1,25 @@
 <h3>Spaltengrößen</h3>
 <div class="nx-btn-group">
-    {% for key, size in configurableSizes %}
-        <label class="nx-btn nx-btn-secondary">
-            <input type="checkbox" name="configurableSizes[]" id="nx-columns-{{ key }}"> {{ size }}
+    {% for key, size in editableBreakpoints %}
+        <label class="nx-btn nx-btn-secondary" title="{{ size }}">
+            <input type="checkbox" name="configurableSizes[]" id="nx-columns-{{ key }}">
+            <span class="nx-icon-viewport-{{ key }}"></span>
         </label>
     {% endfor %}
 </div>
+<p class="tl_help tl_tip" title="">Hier können Sie Spaltengrößen auswählen.</p>
 
-<h3>Smartphone</h3>
-<div style="max-width: calc(50% - 20px)">
-    <h3><label>sehr kleine Auflösung (XS)</label></h3>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked> 100%
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2"> 66,6%
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> 33,3%
-        </label>
+<div class="nx-grid-row">
+    {% for key, size in editableBreakpoints %}
+    <div class="nx-grid-col">
+        <h3>{{ ('tl_content.nx_grid_breakpoint_' ~ key ~ '.0')|trans([], 'contao_default')}}</h3>
+        <select class="tl_select">
+            <option>Automatisch</option>
+            {% for size in range(12, 1) %}
+                <option>{{ size }} Spalten [{{ ((100 / 12) * size)|round }}%]</option>
+            {% endfor %}
+        </select>
+        <p class="tl_help tl_tip" title="">Hier können Sie Spaltengrößen auswählen.</p>
     </div>
+    {% endfor %}
 </div>

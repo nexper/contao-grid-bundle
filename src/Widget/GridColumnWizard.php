@@ -15,6 +15,7 @@ namespace Nexper\ContaoGridBundle\Widget;
 use Contao\System;
 use Contao\Widget;
 use Twig\Environment;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class GridColumnWizard extends Widget
 {
@@ -58,6 +59,9 @@ class GridColumnWizard extends Widget
         /** @var Environment $twig */
         $twig = System::getContainer()->get('twig');
 
+        /** @var TranslatorInterface $translator */
+        $translator = System::getContainer()->get('translator');
+
         // Make sure there is at least an empty array
 		if (empty($this->varValue) || !\is_array($this->varValue)) {
 		    $this->varValue = array();
@@ -65,16 +69,36 @@ class GridColumnWizard extends Widget
 
         dump($this->varValue);
 
+        if(TL_MODE === 'BE') {
+            $GLOBALS['TL_CSS'][] = 'bundles/contaogrid/backend.css';
+        }
+
+        $editableBreakpoints = $this->getEditableBreakpoints($translator);
+
         $htmlContents = $twig->render('@NexperContaoGridBundle/be_widget_grid_column_wizard.html.twig', [
-            'configurableSizes' => [
-                'xs' => 'XS',
-                'sm' => 'SM',
-                'md' => 'MD',
-                'lg' => 'LG',
-                'xl' => 'XL'
-            ],
+            'editableBreakpoints' => $editableBreakpoints,
         ]);
 
         return $htmlContents;
+    }
+
+    /**
+     * Get editable breakpoints.
+     *
+     * @param TranslatorInterface $translator
+     *
+     * @return array
+     */
+    private function getEditableBreakpoints(TranslatorInterface $translator): array
+    {
+        /** @var string $editableBreakpoints */
+        $editableBreakpoints = System::getContainer()->getParameter('nx_grid.editable_breakpoints');
+
+        $breakpoints = array();
+        foreach(explode(',', $editableBreakpoints) as $breakpoint) {
+            $breakpoints[$breakpoint] = $translator->trans('tl_content.nx_grid_breakpoint_'.$breakpoint.'.0', [], 'contao_default');
+        }
+
+        return $breakpoints;
     }
 }
